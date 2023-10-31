@@ -1,0 +1,537 @@
+@charset "utf-8";
+/**
+* WebCanvasGroup.css
+* mins01.com
+* 2015-04-22 : create file
+*/
+/*
+* # warning
+* '공대여자는 이쁘다.'를 나타내야만 사용할 수 있습니다.
+*/
+
+
+#dev_text{position: fixed;bottom:0;right:0;z-index:90000;}
+#rootArea{position: fixed;bottom:0;right:0;top:0;left:0;}
+
+
+
+html{overflow:hidden;padding:0;margin:0;height:100%;touch-action: manipulation;}
+body { padding-top: 50px;height:100%;width:100%; padding:0; margin:0;  font-family: 'dotum',arial,sans-serif; position:fixed; top:0;left:0;right:0;bottom:0;overflow:hidden}
+input,textarea,select,button{padding:0;}
+.navbar{padding-bottom:0px;}
+.navbar-toggle{line-height: 1em;}
+.navbar-brand img{width:50px;height:20px;}
+.nav .glyphicon::before {margin-right:0.5em}
+.glyphicon{ font-family: 'dotum',arial,sans-serif,'Glyphicons Halflings';} /* 폰트 재정의 */
+/* 부트스트랩과 충돌 회피 */
+.ui-dialog{box-sizing:content-box;}
+.ui-dialog *{box-sizing:content-box;}
+
+.bg-grid{ background-image:url("../img/bg.gif"); }
+
+.navbar-fixed-bottom, .navbar-fixed-top{z-index:90}
+
+.list-group-item.active{background-color:#000}
+
+select[disabled]{ background-color:#ccc; opacity:0.3}
+
+.not-active{pointer-events:none;}
+
+
+/* jquery-ui 와 충돌 회피 (이미지 사용관련)*/
+.ui-widget-header .ui-state-default {
+	background-image:none;
+}
+.ui-widget-content {
+	background-image:none;
+}
+.ui-widget-header {
+	background-image:none;
+}
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	background-image:none;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+	background-image:none;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+	background-image:none;
+}
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+	background-image:none;
+}
+.ui-state-error,
+.ui-widget-content .ui-state-error,
+.ui-widget-header .ui-state-error {
+	background-image:none;
+}
+.ui-widget-overlay {
+	background-image:none;
+}
+.ui-widget-shadow {
+	background-image:none;
+}
+/* http://codepen.io/rvinay88/pen/Hweau */
+hr.soften {
+margin-top: 5px;
+margin-bottom: 5px;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.8), rgba(0,0,0,0));
+  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.8), rgba(0,0,0,0));
+  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.8), rgba(0,0,0,0));
+  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.8), rgba(0,0,0,0));
+  border: 0;
+}
+
+
+button.no-glyphicon{font-size:14px;width:40px; font-weight:bold;}
+.glyphicon > .small-text{
+  margin-left: -0.7em;
+  font-size: 0.5em;
+}
+
+.icon-wc-tool-concentratedLineLinear{width:14px;height:14px; position: relative !important;;left:0;top:0;  overflow: hidden; transform: rotate(45deg); margin-top:1px}
+.icon-wc-tool-concentratedLineLinear .line{border-top: 1px solid black; position: absolute; width:14px;top:4px; }
+.icon-wc-tool-concentratedLineLinear .line:nth-child(1){top:2px}
+.icon-wc-tool-concentratedLineLinear .line:nth-child(2){top:4px}
+.icon-wc-tool-concentratedLineLinear .line:nth-child(3){top:6px}
+.icon-wc-tool-concentratedLineLinear .line:nth-child(4){top:8px}
+.icon-wc-tool-concentratedLineLinear .line:nth-child(5){top:10px}
+.icon-wc-tool-concentratedLineLinear .line:nth-child(6){top:12px}
+
+
+
+.icon-wc-tool-concentratedLineRadial{width:14px;height:14px; margin-top:1px; position: relative !important;;left:0;top:0;  overflow: hidden; }
+.icon-wc-tool-concentratedLineRadial .line{position: absolute; width:14px;height: 14px;}
+.icon-wc-tool-concentratedLineRadial .line::before{border-top: 1px solid black; display: block;margin-top:7px; content: " "}
+.icon-wc-tool-concentratedLineRadial .line:nth-child(1){transform: rotate(0deg)}
+.icon-wc-tool-concentratedLineRadial .line:nth-child(2){transform: rotate(30deg)}
+.icon-wc-tool-concentratedLineRadial .line:nth-child(3){transform: rotate(60deg)}
+.icon-wc-tool-concentratedLineRadial .line:nth-child(4){transform: rotate(90deg)}
+.icon-wc-tool-concentratedLineRadial .line:nth-child(5){transform: rotate(120deg)}
+.icon-wc-tool-concentratedLineRadial .line:nth-child(6){transform: rotate(150deg)}
+
+
+
+
+
+
+.wc2-panel{z-index:2}
+
+.wc2-panel .btn-group{margin-bottom:1px;}
+.wc2-panel .panel-heading{text-align:center; padding:0; font-weight:bold;}
+.wc2-panel .panel-body{text-align:center; padding:0;padding:2px;}
+.panel{  margin-bottom:2px;}
+
+#toolPanel{width:92px;min-width:42px;min-height:100px; position:fixed;top:55px;left:1px;}
+#toolPanel > .panel{box-shadow: 0px 1px 3px rgba(0,0,0,0.9);}
+#propPanel{width:50%; min-width: 240px; max-width:300px;min-height:100px; position:fixed;top:55px;right:2px; bottom: 5px; overflow-y: auto;}
+#propPanel > .panel{box-shadow: 0px 1px 3px rgba(0,0,0,0.9);}
+#propPanel>.panel-body{}
+
+#propPanel .wc2-prop-list li{text-align:left;}
+.overflow-scrolly{overflow-y:auto; overflow-x:hidden}
+#propPanel table{border-width:0;padding:0;margin:0;width:100%; border-collapse: separate;}
+#propPanel th,#propPanel td {padding:2px; border-bottom:1px dashed #ccc; }
+#propPanel tbody:last-child tr:last-child th,
+#propPanel tbody:last-child tr:last-child td{border-bottom-width:0;}
+#propPanel th{text-align:center;max-width:100px;}
+#propPanel td{text-align:center;}
+@media (max-width: 767px) {
+	#propPanel{width:50%; min-width: 240px; display: none}
+}
+
+
+
+#propLayerList{height:200px;margin-bottom: 5px;}
+#propLayerList .list-group-item{padding:0px;margin:0px;height:45px; line-height:45px;}
+#propLayerList .WC-node{background-image:url("../img/bg.gif");
+float:left;
+box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+max-height:40px;
+max-width:40px;
+}
+#propLayerList[data-wc2-preview="2"] .WC-node{
+display:none;
+
+}
+
+#propLayerList li{ cursor:pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+#propLayerList li[data-wcb-active="1"]{ background-color:#abc; font-weight:bold;}
+
+#propHistoryList{height:100px;margin-bottom: 5px;}
+#propHistoryList li{font-size: 12px;  padding: 2px 2px 2px 1em;}
+
+
+#toolPanel{display:none}
+#propPanel{display:none}
+/* @media (min-width: 768px) {
+	#toolPanel{display:block;visibility: visible;}
+	#propPanel{display:block;visibility: visible;}
+	
+} */
+@media (max-width: 768px) {
+	#toolPanel{width:46px; min-width:26px; display: none}
+}
+@media (max-width: 500px) {
+	/* 툴 버튼을 작은 버튼으로 변경 */
+	#toolPanel{width:30px; min-width:26px; display: none}
+	#toolPanel .btn{
+		padding: 1px 5px;
+		font-size: 12px;
+		line-height: 1.5;
+		border-radius: 3px;
+	}
+	#toolPanel button.no-glyphicon{
+		width:24px;
+	}
+}
+
+
+
+
+a.wc-viewImage{text-align:center;padding:5px;overflow: auto;display: block;}
+a.wc-viewImage img.wc-viewImage{ box-shadow: 0px 0px 5px rgba(0,0,0,0.5);}
+
+@media (max-width: 768px) {
+	a.wc-viewImage img.wc-viewImage{ max-width:98%; border:0px inset #abc;}
+}
+
+/* 이미지 툴용 prop */
+#imageNode{max-width:100%;}
+
+
+
+
+
+#hiddenArea{display:none;}
+
+
+#contentArea{ position:fixed;top:55px;left:0;right:0;bottom:0;z-index:1;}
+#contentArea{
+	left: 0px;
+	right: 0px;
+}
+@media (min-width: 768px) {
+	#contentArea{
+		/* left: 95px;
+		right: 207px; */
+	}
+}
+
+
+#tabs{position:absolute;left;top:0;left:0;right:0;bottom:0;}
+#tabsContent{
+overflow:hidden;
+border: 1px solid #ccc;
+background-color:#eee;
+position: relative;
+left:0; right:0;
+top:2px;bottom:0;
+box-sizing: border-box;
+height:100%;
+box-shadow: 0px 1px 3px rgba(0,0,0,0.2)  inset;
+}
+#tabsContent .ui-tabs-panel{
+width: 100%;
+height: 100%;
+box-sizing: border-box;
+padding:0px;
+position: absolute;
+}
+/* 툴 설정 부분 */
+#propPanel .wc-tool table{width:100%; table-layout:fixed;}
+#propPanel .wc-tool th{font-size:12px}
+
+/* 커서 정의부 */
+#tabsContent{ cursor:crosshair; }
+#tabsContent[data-wc-tool="move"]{cursor:move;}
+#tabsContent[data-wc-tool="transform"]{cursor:move;}
+
+/* wcb */
+.WCB{box-shadow: 0px 1px 3px rgba(0,0,0,0.5);}
+.wcb-frame {
+position: absolute;
+top: 0;
+right: 0;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 100%;
+box-sizing: border-box;
+}
+.wcb-box {
+width: 100000px;
+margin-left: 50%;
+transform: translateX(-50%);
+}
+.wcb-frame .WCB{}
+.ui-dialog .wcb-bottom{position:absolute;bottom:0px ;left:0;right:0;padding:2px 2px 0 2px; border-top:2px dotted #fff; background-color:rgba(204,204,204,0.8)}
+
+.wcb-move {
+position: absolute;
+top: 0;
+right: 0;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 100%;
+box-sizing: border-box;
+.border:0px solid #eee;
+.border-top-width:30px;
+padding-top: 30px;
+
+}
+
+.wcb-zoom-box{
+z-index: 3;
+position: absolute;
+left: 2px;
+bottom: 2px;
+}
+input.wcb-zoom[type="number"]{
+	border-width: 0;background: transparent;
+	text-align: right;
+}
+
+.ui-widget-header {
+background: #ccc;
+}
+.wcw-active .ui-widget-header {
+background: #abc;
+}
+
+/* 메뉴 상세 부분 */
+#menuDetailArea{
+position:fixed;top:52px;left:0;right:0;bottom:0;z-index:3;
+background-color:rgba(0,0,0,0.2);
+}
+#menuDetailArea .wc2-panel{margin:0 auto;min-width:200px; max-width:600px;}
+#menuDetailArea .wc-mdetail{display: none;}
+#menuDetailArea .wc-mdetail.show{display: block;}
+/* file-open 이미지 미리보기 */
+#formMenuDetailFileOpenPreview{max-width:90%;}
+
+#btnQuickNewFile{cursor:pointer;}
+
+/* 필터 상세 부분 */
+#filterCanvasBox{min-height:100px; text-align:center;}
+#filterCanvasBox .WC-node{display:inline-block;}
+
+/* 지우개 */
+#formToolEraserCanvasBox{ background-color:rgba(0,0,0,0.6)}
+
+/* imageAreaSelect . fix crush bootstrap */
+.imgareaselect-outer {box-sizing: content-box;}
+
+/* 브러쉬 */
+#formToolBrushCanvasBox {overflow: hidden;height:80px}
+#formToolBrushCanvasBox .WC{margin:0 auto; display: block;margin-top:-10px;}
+#formToolBrushCanvasBox .WC-node{display:inline-block;}
+#toolBrushList img
+,#toolBrushList input{width:34px;height:34px;
+border:1px gray outset; margin:2px;box-sizing: border-box; box-shadow: 0px 1px 3px rgba(0,0,0,0.9);
+border-radius: 3px;
+cursor:pointer;
+}
+
+.brushImage input{
+	display: none;
+}
+.brushImage img{
+	width:32px;height:32px;
+}
+.brushImage input:checked + img{
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+/* 패턴 */
+#formToolPatternCanvasBox{overflow:scroll;}
+#toolPatternList img
+,#toolPatternList input{width:34px;height:34px;
+border:1px gray outset; margin:2px;box-sizing: border-box; box-shadow: 0px 1px 3px rgba(0,0,0,0.9);
+border-radius: 3px;
+cursor:pointer;
+}
+
+/* 툴 버튼에 처리 */
+#toolPanel .btn {position:relative;}
+#toolPanel .btn .tiny-text{position:absolute;bottom:0px;}
+
+
+/* 스펙트럼 파레트쪽 처리 */
+.sp-palette-row-selection{width:180px;}
+
+/* 레이어 */
+.wc-prop-layer-info .WC-node , .wc-prop-layer-info  .eye{
+	margin:1px 5px;
+}
+.wc-prop-layer-info  .eye{
+	display:block;
+	max-width:40px; text-align:center;
+	position:absolute;
+	bottom:0px; left:0px;top:0px;
+	font-family: 'Glyphicons Halflings';
+}
+.wc-prop-layer-info[data-wc-hide="0"] > .eye::before{
+	display:none;
+	content: "\e105";
+ }
+.wc-prop-layer-info[data-wc-hide="1"] > .eye{
+	background-color: rgba(0,0,0,0.3); 
+}
+.wc-prop-layer-info[data-wc-hide="1"] > .eye::before{
+	content: "\e106";
+	
+}
+
+
+@media (max-width: 768px) {
+	/* 툴 버튼을 작은 버튼으로 변경 */
+	.wc-prop-layer-info .eye{
+		position: static;
+		padding-right:5px;
+		display:inline;
+	}
+	.wc-prop-layer-info[data-wc-hide="1"] > .eye{
+		background-color:transparent;
+	}
+	.wc-prop-layer-info[data-wc-hide="0"]  .eye::before{
+		display:inline;
+	}
+	#quick-menu-1{
+		display: none;
+	}
+
+}
+
+/**
+ * 스포이드 관련
+ * @type {[type]}
+ */
+#divSelectedColorSpuit{
+	border-radius: 5px;
+	width:125px;height: 50%;
+	border:1px solid rgba(255,255,255,0.2);
+	margin:12px auto auto auto;
+	background-color: #fff;
+	box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.2);
+	font-size:8px; text-align: center;
+	display: flex ;
+	justify-content: center;  /* 가로 중앙 */
+	align-items: center; /* 세로 중앙 */
+	font-weight: bold;
+	text-shadow:#fff -1px -1px 1px , #fff -1px 1px 1px, #fff 1px 1px 1px, #fff 1px -1px 1px;
+}
+#divPreviewColorSpuit{
+	border-radius: 5px;
+	width:150px;height: 50px;
+	border:1px solid rgba(255,255,255,0.2);
+	margin:0 auto;
+	background-color: #fff;
+	box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.2);
+}
+
+/**
+ * 유틸성
+ */
+.showRangeValue{position: relative; padding:0 13px;}
+.showRangeValue::before{
+	content: attr(data-val);
+	position: absolute;top:0;left:0; right:0;bottom:0;
+	text-align: center;
+	pointer-events: none;
+}
+.showRangeValue[data-unit]::before{
+	content: attr(data-val)attr(data-unit);
+}
+.showRangeValue .div-btn-dec{
+	position: absolute;top:0;left:0;bottom:0;
+}
+.showRangeValue .div-btn-inc{
+	position: absolute;top:0;right:0;bottom:0;
+}
+.showRangeValue .btn-dec,
+.showRangeValue .btn-inc{
+	text-align: center; font-weight: bold;
+	font-size:12px;
+	border-radius: 50%;border-width:0;
+	background: transparent;
+	/* background-color: #000;color:#fff;
+	
+	width:12px;height:12px;line-height: 1em;
+	position: relative; */
+}
+/* .showRangeValue .btn-dec::before{
+	font-size:10px;
+	content: "-";
+	line-height: 1em;
+	vertical-align: top;
+	position: absolute;top:0;height: 100%;left:-0.5em;right:-0.5em;
+}
+.showRangeValue .btn-inc::before{
+	font-size:10px;
+	content: "+";
+	line-height: 1em;
+	vertical-align: top;
+	position: absolute;top:0;height: 100%;left:-0.5em;right:-0.5em;
+} */
+
+
+.no-padding{padding:0 !important;}
+
+/**
+ * inputRangeBox 의 기본 너비를 100%로 한다.
+ * @type {[type]}
+ */
+.inputRangeBox , .inputNumberBox{
+	width: 100%;
+	font-size:1.2em;
+}
+
+/**
+ * selectArea 관련
+ */
+.selectArea{z-index: 1 !important}
+.selectArea img{
+	image-rendering: -moz-crisp-edges;         /* Firefox */
+	image-rendering:   -o-crisp-edges;         /* Opera */
+	image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+	image-rendering: crisp-edges;
+	-ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+}
+
+.contenteditable-div{
+	background-color: transparent;
+	text-decoration: none;
+	font-weight: normal;
+	outline-width: 0;
+	color: transparent;
+	/* color:rgba(0,0,0,0.8); */
+	caret-color: #000;
+	/* overflow: hidden;; */
+	cursor: text;
+}
+.contenteditable-div *{
+	text-decoration: inherit !important;
+	font-weight: inherit  !important;
+}
+.contenteditable-div[contenteditable][placeholder]:empty::before{
+	content: attr(placeholder);
+	color:rgba(0,0,0,0.2)
+}
+
+.wc2-selectArea-no-bg .selectArea-bg{
+	border-color:transparent;
+}
